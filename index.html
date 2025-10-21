@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KDA Student Achievements</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Card Layout */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        width: 250px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Admin Panel */
+    #adminPanel {
+        display: none;
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px auto;
+        border-radius: 8px;
+        width: 80%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #searchInput {
+        width: 80%;
+        padding: 8px;
+        margin: 10px auto 20px auto;
+        display: block;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>KDA Student Achievements</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#profiles">Student Profiles</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#news">News & Updates</a></li>
+            <li><a href="#admin">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to KDA Achievements Platform</h2>
+        <p style="text-align:center;">Discover and celebrate the outstanding achievements of our students in academics, sports, arts, and leadership!</p>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <h2>Recent Achievements</h2>
+        <input type="text" id="searchInput" placeholder="Search achievements...">
+        <div class="card-container" id="achievementList">
+            <div class="card">RWABUNEZA Nick<br><small>1st Place in National coding Challenge</small></div>
+            <div class="card">UWASE benigne<br><small>Winner of Best sleeping Award</small></div>
+            <div class="card">GIKUNDIRO Jessi<br><small>Captain of Soccer Team</small></div>
+        </div>
+    </section>
+
+    <!-- Student Profiles -->
+    <section id="profiles"> 
+        <h2>Student Profiles</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="nick.jpg">
+                <h3>NICK.RW</h3>
+                <p>Class: 11A | Interests: Coding</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Jane Smith">
+                <h3>UWASE Benigne</h3>
+                <p>Class: 11B | Interests: Art, Music</p>
+            </div>
+         <div class="card">
+            <img scr="ok.png">
+            <h3> Rusaro Stecy</h3>
+            <p> Class: 11A | Interests: </p>
+         </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <h2>Photo & Video Gallery</h2>
+        <div class="card-container gallery">
+            <div class="card"><img src="https://via.placeholder.com/250" alt="Gallery Image"></div>
+            <div class="card"><img src="https://via.placeholder.com/250" alt="Gallery Image"></div>
+            <div class="card"><img src="https://via.placeholder.com/250" alt="Gallery Image"></div>
+        </div>
+    </section>
+
+    <!-- News & Updates -->
+    <section id="news">
+        <h2>News & Updates</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>School Science Fair</h3>
+                <p>The annual science fair will take place on Nov 10. Students are encouraged to participate!</p>
+            </div>
+            <div class="card">
+                <h3>Art Exhibition</h3>
+                <p>Our students' art exhibition won the regional competition. Congrats to all participants!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <section id="admin">
+        <h2>Admin Panel</h2>
+        <button onclick="toggleAdmin()">Login / Toggle Panel</button>
+        <div id="adminPanel">
+            <h3>Add New Achievement</h3>
+            <input type="text" id="newStudent" placeholder="Student Name">
+            <input type="text" id="newAchievement" placeholder="Achievement Description">
+            <button onclick="addAchievement()">Add Achievement</button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 KDA. All rights reserved.</p>
+</footer>
+
+<script>
+    // Toggle Admin Panel
+    function toggleAdmin() {
+        const panel = document.getElementById("adminPanel");
+        panel.style.display = panel.style.display === "none" ? "block" : "none";
+    }
+
+    // Add Achievement
+    function addAchievement() {
+        const student = document.getElementById("newStudent").value;
+        const achievement = document.getElementById("newAchievement").value;
+        if(student && achievement) {
+            const div = document.createElement("div");
+            div.className = "card";
+            div.innerHTML = student + "<br><small>" + achievement + "</small>";
+            document.getElementById("achievementList").appendChild(div);
+            document.getElementById("newStudent").value = "";
+            document.getElementById("newAchievement").value = "";
+            alert("Achievement added!");
+        } else {
+            alert("Please enter student name and achievement.");
+        }
+    }
+
+    // Search / Filter Achievements
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+        const filter = this.value.toLowerCase();
+        const cards = document.querySelectorAll("#achievementList .card");
+        cards.forEach(card => {
+            if(card.textContent.toLowerCase().includes(filter)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>\\
